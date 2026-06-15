@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexco Heating & Cooling | Lexington, NC HVAC Services Since 1976</title>
+    <meta name="description" content="Lexco Heating & Cooling - Trusted HVAC contractor in Lexington, NC since 1976. Professional heating, AC repair, installation & maintenance services. 24/7 emergency service. Call (336) 357-5776.">
+    <meta name="keywords" content="HVAC Lexington NC, heating repair, air conditioning, AC repair, furnace repair, Lexco Heating Cooling, emergency HVAC, Davidson County">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lexco Heating & Cooling | Lexington, NC HVAC Services">
+    <meta property="og:description" content="Trusted HVAC contractor serving Lexington, NC since 1976. 24/7 emergency heating & cooling services.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://lexcoheatingandcooling.com">
+    <meta property="og:image" content="images/hero-bg.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lexco Heating & Cooling | Lexington, NC">
+    <meta name="twitter:description" content="Trusted HVAC contractor since 1976. 24/7 emergency service.">
+    <meta name="twitter:image" content="images/hero-bg.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        steel: {
+                            50: '#F4F6F8',
+                            100: '#E8ECF0',
+                            200: '#B8C2C9',
+                            300: '#8A9BA8',
+                            400: '#6B7F8D',
+                            500: '#3D5A6C',
+                            600: '#2F4A5A',
+                            700: '#223A48',
+                            800: '#162B38',
+                            900: '#0D1F2A'
+                        },
+                        gold: {
+                            400: '#D4A843',
+                            500: '#C49A2C',
+                            600: '#A87F20'
+                        },
+                        dark: '#111111'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['IBM Plex Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: 'Inter', system-ui, sans-serif;
+                overflow-x: hidden;
+            }
+            ::selection {
+                background: #C49A2C;
+                color: #111111;
+            }
+        }
+        @layer components {
+            .diagonal-clip-right {
+                clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+            }
+            .diagonal-clip-left {
+                clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+            }
+            .diagonal-clip-top {
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            }
+            .diagonal-clip-bottom {
+                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            }
+            .text-gradient {
+                background: linear-gradient(135deg, #F4F6F8 0%, #C49A2C 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .glass {
+                background: rgba(61, 90, 108, 0.15);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .glass-dark {
+                background: rgba(17, 17, 17, 0.7);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .gold-glow {
+                box-shadow: 0 0 30px rgba(196, 154, 44, 0.3);
+            }
+            .noise-overlay {
+                position: relative;
+            }
+            .noise-overlay::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+                opacity: 0.04;
+                pointer-events: none;
+                mix-blend-mode: overlay;
+            }
+            .section-pinned {
+                position: relative;
+                width: 100vw;
+                min-height: 100vh;
+                overflow: hidden;
+            }
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            }
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HVACBusiness",
+        "name": "Lexco Heating & Cooling",
+        "description": "Trusted HVAC contractor serving Lexington, NC since 1976. Professional heating, AC repair, installation & maintenance services.",
+        "url": "https://lexcoheatingandcooling.com",
+        "telephone": "+1-336-357-5776",
+        "email": "",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "5765 NC Highway 8",
+            "addressLocality": "Lexington",
+            "addressRegion": "NC",
+            "postalCode": "27292",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 35.824,
+            "longitude": -80.253
+        },
+        "openingHours": [
+            "Mo-Fr 08:00-16:00"
+        ],
+        "priceRange": "$$",
+        "areaServed": [
+            {"@type": "City", "name": "Lexington"},
+            {"@type": "AdministrativeArea", "name": "Davidson County"}
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "HVAC Services",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heating Repair"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heating Installation"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Repair"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Installation"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "HVAC Maintenance"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Emergency HVAC Service"}}
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "57"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How often should I have my HVAC system serviced?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We recommend having your HVAC system professionally serviced twice a year - once in the spring before cooling season and once in the fall before heating season. Regular maintenance helps prevent breakdowns, improves efficiency, and extends the life of your system."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are signs my air conditioner needs repair?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Common signs include: warm air blowing from vents, weak airflow, unusual noises (grinding, squealing), frequent cycling on and off, high humidity indoors, water leaks around the unit, and unexpectedly high energy bills. If you notice any of these, call Lexco for a diagnostic."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer emergency HVAC services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Lexco Heating & Cooling provides 24/7 emergency HVAC services throughout Lexington and Davidson County. Our technicians are on-call with fully stocked trucks to handle any heating or cooling emergency."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does an HVAC system typically last?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "With proper maintenance, central air conditioners typically last 12-15 years, furnaces last 15-20 years, and heat pumps last about 10-15 years. Regular maintenance from Lexco can help maximize your system's lifespan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What areas do you service?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We proudly serve Lexington, NC and the surrounding Davidson County communities including Welcome, Tyro, Reeds, and Southmont. Contact us to confirm service in your area."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="bg-dark text-steel-50">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="w-full px-6 lg:px-12 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-snowflake text-dark text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-white group-hover:text-gold-500 transition-colors">LEXCO</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-steel-300 -mt-1">Heating & Cooling</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#services" class="text-sm font-medium text-steel-200 hover:text-gold-500 transition-colors">Services</a>
+                <a href="#reviews" class="text-sm font-medium text-steel-200 hover:text-gold-500 transition-colors">Reviews</a>
+                <a href="#process" class="text-sm font-medium text-steel-200 hover:text-gold-500 transition-colors">Process</a>
+                <a href="#faq" class="text-sm font-medium text-steel-200 hover:text-gold-500 transition-colors">FAQ</a>
+                <a href="#contact" class="text-sm font-medium text-steel-200 hover:text-gold-500 transition-colors">Contact</a>
+            </div>
+            
+            <!-- CTA -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:3363575776" class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
+                    <i class="fas fa-phone"></i>
+                    (336) 357-5776
+                </a>
+                <a href="#contact" class="bg-gold-500 hover:bg-gold-400 text-dark font-semibold px-5 py-2.5 rounded-lg text-sm transition-all hover:scale-105">
+                    Get Estimate
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-dark/95 backdrop-blur-xl border-t border-white/10">
+            <div class="px-6 py-6 flex flex-col gap-4">
+                <a href="#services" class="text-steel-200 hover:text-gold-500 py-2">Services</a>
+                <a href="#reviews" class="text-steel-200 hover:text-gold-500 py-2">Reviews</a>
+                <a href="#process" class="text-steel-200 hover:text-gold-500 py-2">Process</a>
+                <a href="#faq" class="text-steel-200 hover:text-gold-500 py-2">FAQ</a>
+                <a href="#contact" class="text-steel-200 hover:text-gold-500 py-2">Contact</a>
+                <a href="tel:3363575776" class="text-gold-500 font-semibold py-2 flex items-center gap-2">
+                    <i class="fas fa-phone"></i> (336) 357-5776
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- SECTION 1: HERO                           -->
+    <!-- ========================================== -->
+    <section id="hero" class="relative w-full min-h-screen flex items-center overflow-hidden noise-overlay">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="images/hero-bg.jpg" alt="Lexco Heating & Cooling Professional HVAC Service" class="w-full h-full object-cover" id="hero-image">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/90 to-dark/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+        </div>
+        
+        <!-- Diagonal Decorative Element -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-steel-500/20 to-transparent diagonal-clip-left"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 w-full px-6 lg:px-16 pt-24 pb-16">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8" id="hero-content">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2" data-aos="fade-down">
+                        <i class="fas fa-star text-gold-500 text-xs"></i>
+                        <span class="text-xs font-mono uppercase tracking-[0.15em] text-steel-200">Trusted Since 1976</span>
+                    </div>
+                    
+                    <!-- Headline -->
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight" data-aos="fade-up" data-aos-delay="100">
+                        <span class="text-white">PRECISION</span><br>
+                        <span class="text-gradient">SERVICE</span>
+                    </h1>
+                    
+                    <!-- Gold Rule -->
+                    <div class="w-24 h-0.5 bg-gold-500" data-aos="scale-x" data-aos-delay="200"></div>
+                    
+                    <!-- Subheadline -->
+                    <p class="text-lg md:text-xl text-steel-200 max-w-lg leading-relaxed" data-aos="fade-up" data-aos-delay="300">
+                        Heating & cooling repairs and installs—done right the first time. Lexington's trusted HVAC partner for nearly 50 years.
+                    </p>
+                    
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#contact" class="group bg-gold-500 hover:bg-gold-400 text-dark font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all hover:scale-105 flex items-center gap-3">
+                            Get Free Estimate
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#services" class="border border-white/30 hover:border-gold-500 text-white font-semibold px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all hover:bg-white/5 flex items-center gap-3">
+                            Our Services
+                        </a>
+                    </div>
+                    
+                    <!-- Micro -->
+                    <p class="text-xs font-mono uppercase tracking-[0.12em] text-steel-300" data-aos="fade-up" data-aos-delay="500">
+                        Residential • Commercial • 24/7 Emergency
+                    </p>
+                    
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-6 pt-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-gold-500 text-sm"></i>
+                            </div>
+                            <span class="text-xs text-steel-200">Licensed & Insured</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                                <i class="fas fa-clock text-gold-500 text-sm"></i>
+                            </div>
+                            <span class="text-xs text-steel-200">24/7 Available</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-gold-500 text-sm"></i>
+                            </div>
+                            <span class="text-xs text-steel-200">Lexington, NC</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Stats Card -->
+                <div class="hidden lg:block relative" data-aos="fade-left" data-aos-delay="300">
+                    <div class="glass rounded-2xl p-8 space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-4 bg-white/5 rounded-xl">
+                                <div class="text-3xl font-bold text-gold-500">50+</div>
+                                <div class="text-xs text-steel-300 mt-1">Years Experience</div>
+                            </div>
+                            <div class="text-center p-4 bg-white/5 rounded-xl">
+                                <div class="text-3xl font-bold text-gold-500">5.0</div>
+                                <div class="text-xs text-steel-300 mt-1">Star Rating</div>
+                            </div>
+                            <div class="text-center p-4 bg-white/5 rounded-xl">
+                                <div class="text-3xl font-bold text-gold-500">57+</div>
+                                <div class="text-xs text-steel-300 mt-1">Happy Reviews</div>
+                            </div>
+                            <div class="text-center p-4 bg-white/5 rounded-xl">
+                                <div class="text-3xl font-bold text-gold-500">24/7</div>
+                                <div class="text-xs text-steel-300 mt-1">Emergency</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Emergency Banner -->
+                        <div class="bg-red-500/20 border border-red-500/30 rounded-xl p-4 flex items-center gap-4">
+                            <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                                <i class="fas fa-bolt text-white"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-white">Emergency Service Available</div>
+                                <a href="tel:3363575776" class="text-xs text-gold-500 hover:underline">Call (336) 357-5776</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+            <span class="text-xs font-mono uppercase tracking-widest text-steel-400">Scroll</span>
+            <i class="fas fa-chevron-down text-gold-500"></i>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: TRUST / STATS                   -->
+    <!-- ========================================== -->
+    <section id="trust" class="relative w-full py-20 bg-steel-500 noise-overlay overflow-hidden">
+        <!-- Diagonal Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-steel-600 via-steel-500 to-steel-600"></div>
+        
+        <!-- Decorative Chevron -->
+        <svg class="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 text-gold-500/10" viewBox="0 0 100 100" fill="currentColor">
+            <polygon points="40,20 70,50 40,80 30,70 50,50 30,30"/>
+        </svg>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-4 group-hover:bg-gold-500/20 transition-colors">
+                        <i class="fas fa-calendar-alt text-gold-500 text-2xl"></i>
+                    </div>
+                    <div class="text-4xl lg:text-5xl font-bold text-white counter" data-target="50">0</div>
+                    <div class="text-sm text-steel-200 mt-2">Years of Service</div>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-4 group-hover:bg-gold-500/20 transition-colors">
+                        <i class="fas fa-smile text-gold-500 text-2xl"></i>
+                    </div>
+                    <div class="text-4xl lg:text-5xl font-bold text-white counter" data-target="500">0</div>
+                    <div class="text-sm text-steel-200 mt-2">Happy Customers</div>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-4 group-hover:bg-gold-500/20 transition-colors">
+                        <i class="fas fa-tools text-gold-500 text-2xl"></i>
+                    </div>
+                    <div class="text-4xl lg:text-5xl font-bold text-white counter" data-target="1000">0</div>
+                    <div class="text-sm text-steel-200 mt-2">Jobs Completed</div>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-4 group-hover:bg-gold-500/20 transition-colors">
+                        <i class="fas fa-award text-gold-500 text-2xl"></i>
+                    </div>
+                    <div class="text-4xl lg:text-5xl font-bold text-white">5.0</div>
+                    <div class="text-sm text-steel-200 mt-2">Star Rating</div>
+                </div>
+            </div>
+            
+            <!-- Trust Row -->
+            <div class="mt-16 flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex items-center gap-3 glass rounded-full px-5 py-2.5">
+                    <i class="fas fa-check-circle text-gold-500"></i>
+                    <span class="text-sm text-steel-100">Licensed & Insured</span>
+                </div>
+                <div class="flex items-center gap-3 glass rounded-full px-5 py-2.5">
+                    <i class="fas fa-check-circle text-gold-500"></i>
+                    <span class="text-sm text-steel-100">Family Owned</span>
+                </div>
+                <div class="flex items-center gap-3 glass rounded-full px-5 py-2.5">
+                    <i class="fas fa-check-circle text-gold-500"></i>
+                    <span class="text-sm text-steel-100">NC Licensed #SP.PH.20328</span>
+                </div>
+                <div class="flex items-center gap-3 glass rounded-full px-5 py-2.5">
+                    <i class="fas fa-check-circle text-gold-500"></i>
+                    <span class="text-sm text-steel-100">Satisfaction Guaranteed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: SERVICES                        -->
+    <!-- ========================================== -->
+    <section id="services" class="relative w-full py-24 bg-dark noise-overlay overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(196,154,44,0.1) 35px, rgba(196,154,44,0.1) 70px);"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <!-- Section Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">What We Do</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 tracking-tight">
+                    COMPREHENSIVE<br><span class="text-gradient">SERVICES</span>
+                </h2>
+                <p class="text-steel-300 mt-6 max-w-2xl mx-auto">
+                    From quick fixes to full replacements, we cover heating, cooling, and air quality—backed by clear communication and fair pricing.
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1: Heating Repair -->
+                <div class="group glass rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/heating-repair.jpg" alt="Heating Repair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-fire text-dark text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Heating Repair & Install</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">Furnaces, heat pumps, and boilers. Kept running strong through winter with expert diagnostics and quality repairs.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-gold-500 text-sm font-semibold mt-4 group-hover:gap-3 transition-all">
+                            Learn More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2: AC Repair -->
+                <div class="group glass rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/ac-install.jpg" alt="AC Installation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-snowflake text-dark text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">AC Repair & Install</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">Central air, mini-splits, and ductless systems. Stay cool, quiet, and efficient all summer long.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-gold-500 text-sm font-semibold mt-4 group-hover:gap-3 transition-all">
+                            Learn More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3: Maintenance -->
+                <div class="group glass rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/service-tuneup.jpg" alt="HVAC Maintenance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-wrench text-dark text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Maintenance Plans</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">Tune-ups that prevent breakdowns and protect your investment. Join our Smart Care Club for priority service.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-gold-500 text-sm font-semibold mt-4 group-hover:gap-3 transition-all">
+                            Learn More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4: Emergency -->
+                <div class="group glass rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/emergency.jpg" alt="Emergency HVAC Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center animate-pulse">
+                            <i class="fas fa-bolt text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Emergency Service</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">24/7 emergency HVAC services. Our technicians are on-call with fully stocked trucks for any heating or cooling crisis.</p>
+                        <a href="tel:3363575776" class="inline-flex items-center gap-2 text-red-400 text-sm font-semibold mt-4 group-hover:gap-3 transition-all">
+                            Call Now <i class="fas fa-phone text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5: Indoor Air Quality -->
+                <div class="group glass rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/indoor-air.jpg" alt="Indoor Air Quality" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-wind text-dark text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Indoor Air Quality</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">Air purifiers, humidifiers, and ventilation solutions for healthier, cleaner air in your home or business.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-gold-500 text-sm font-semibold mt-4 group-hover:gap-3 transition-all">
+                            Learn More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6: Commercial -->
+                <div class="group glass rounded-2xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/tech-panel.jpg" alt="Commercial HVAC" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-building text-dark text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Commercial HVAC</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">Full-scale commercial heating and cooling solutions. Rooftop units, package systems, and building automation.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-gold-500 text-sm font-semibold mt-4 group-hover:gap-3 transition-all">
+                            Learn More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 4: WHY CHOOSE US                   -->
+    <!-- ========================================== -->
+    <section id="why-us" class="relative w-full py-24 bg-steel-500 noise-overlay overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-steel-600 via-steel-500 to-steel-600"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Image -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="relative rounded-2xl overflow-hidden">
+                        <img src="images/tech-smile.jpg" alt="Lexco HVAC Technician" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-600/60 to-transparent"></div>
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-gold-500 text-dark rounded-2xl p-6 shadow-xl">
+                        <div class="text-3xl font-bold">50+</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider">Years</div>
+                    </div>
+                </div>
+                
+                <!-- Right: Content -->
+                <div class="space-y-8">
+                    <div data-aos="fade-up">
+                        <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">Why Lexco</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+                            BUILT FOR<br><span class="text-gradient">SPEED</span>
+                        </h2>
+                        <p class="text-steel-200 mt-6 leading-relaxed">
+                            We show up on time, diagnose fast, and fix it for real. Same-day appointments available throughout Lexington and Davidson County.
+                        </p>
+                    </div>
+                    
+                    <!-- Features -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-4 glass rounded-xl p-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-10 h-10 bg-gold-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user-tie text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Experienced Techs</h4>
+                                <p class="text-xs text-steel-300 mt-1">Licensed professionals</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 glass rounded-xl p-4" data-aos="fade-up" data-aos-delay="150">
+                            <div class="w-10 h-10 bg-gold-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-bolt text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Fast Response</h4>
+                                <p class="text-xs text-steel-300 mt-1">Same-day service</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 glass rounded-xl p-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-10 h-10 bg-gold-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-hand-holding-usd text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Honest Pricing</h4>
+                                <p class="text-xs text-steel-300 mt-1">No hidden fees</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 glass rounded-xl p-4" data-aos="fade-up" data-aos-delay="250">
+                            <div class="w-10 h-10 bg-gold-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Quality Work</h4>
+                                <p class="text-xs text-steel-300 mt-1">Satisfaction guaranteed</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 glass rounded-xl p-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-10 h-10 bg-gold-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marked-alt text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Local Expertise</h4>
+                                <p class="text-xs text-steel-300 mt-1">Lexington since 1976</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 glass rounded-xl p-4" data-aos="fade-up" data-aos-delay="350">
+                            <div class="w-10 h-10 bg-gold-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-heart text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Customer First</h4>
+                                <p class="text-xs text-steel-300 mt-1">5-star rated service</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-400 text-dark font-bold px-8 py-4 rounded-xl transition-all hover:scale-105" data-aos="fade-up" data-aos-delay="400">
+                        Book Online
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 5: ABOUT                           -->
+    <!-- ========================================== -->
+    <section id="about" class="relative w-full py-24 bg-dark noise-overlay overflow-hidden">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Content -->
+                <div class="space-y-6 order-2 lg:order-1">
+                    <div data-aos="fade-up">
+                        <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">Our Story</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+                            TRUSTED BY<br><span class="text-gradient">NEIGHBORS</span>
+                        </h2>
+                    </div>
+                    
+                    <p class="text-steel-200 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                        Since 1976, Lexco Heating & Cooling has been the name Lexington trusts for all their heating and cooling needs. What started as a small family operation has grown into one of Davidson County's most respected HVAC contractors.
+                    </p>
+                    
+                    <p class="text-steel-300 leading-relaxed" data-aos="fade-up" data-aos-delay="150">
+                        Our commitment to the Lexington community runs deep. We're not just service technicians—we're your neighbors. Every repair, every installation, every maintenance visit is backed by our reputation for honesty, quality workmanship, and fair pricing.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 pt-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold-500"></i>
+                            <span class="text-sm text-steel-200">Family Owned</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold-500"></i>
+                            <span class="text-sm text-steel-200">Local Business</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold-500"></i>
+                            <span class="text-sm text-steel-200">Community Focused</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Quote -->
+                    <div class="glass rounded-xl p-6 mt-6 border-l-4 border-gold-500" data-aos="fade-up" data-aos-delay="250">
+                        <p class="text-steel-100 italic">"Fast, honest, and clean. Lexco explained everything and had us comfortable by dinner."</p>
+                        <p class="text-gold-500 text-sm mt-3 font-semibold">— Jordan M., Lexington homeowner</p>
+                    </div>
+                </div>
+                
+                <!-- Right: Image -->
+                <div class="relative order-1 lg:order-2" data-aos="fade-left">
+                    <div class="relative rounded-2xl overflow-hidden">
+                        <img src="images/team.jpg" alt="Lexco Heating & Cooling Team" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent"></div>
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-4 -left-4 w-24 h-24 border-2 border-gold-500/30 rounded-2xl"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-gold-500/20 rounded-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 6: SERVICE AREAS                   -->
+    <!-- ========================================== -->
+    <section id="areas" class="relative w-full py-24 bg-steel-500 noise-overlay overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-steel-600 via-steel-500 to-steel-600"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">Service Area</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+                    SERVING <span class="text-gradient">LEXINGTON</span><br>& BEYOND
+                </h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Map Area -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="glass rounded-2xl overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104158.12345678901!2d-80.35!3d35.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8853b2c3c4d5e6f7%3A0x1234567890abcdef!2sLexington%2C%20NC%2027292!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="grayscale hover:grayscale-0 transition-all duration-500"
+                        ></iframe>
+                    </div>
+                </div>
+                
+                <!-- Areas List -->
+                <div class="space-y-6" data-aos="fade-left">
+                    <div class="flex items-center gap-4 glass rounded-xl p-4">
+                        <div class="w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-map-pin text-dark"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">Lexington, NC</h4>
+                            <p class="text-sm text-steel-300">Primary Service Area</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="glass rounded-lg p-3 text-center">
+                            <span class="text-sm text-steel-200">Welcome</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 text-center">
+                            <span class="text-sm text-steel-200">Tyro</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 text-center">
+                            <span class="text-sm text-steel-200">Reeds</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 text-center">
+                            <span class="text-sm text-steel-200">Southmont</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 text-center">
+                            <span class="text-sm text-steel-200">Midway</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 text-center">
+                            <span class="text-sm text-steel-200">Churchland</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 text-center">
+                            <span class="text-sm text-steel-200">Denton</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 text-center">
+                            <span class="text-sm text-steel-200">Wallburg</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-xl p-4 border border-gold-500/30">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-info-circle text-gold-500"></i>
+                            <p class="text-sm text-steel-200">Not sure if we service your area? Give us a call at <a href="tel:3363575776" class="text-gold-500 font-semibold">(336) 357-5776</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 7: REVIEWS                         -->
+    <!-- ========================================== -->
+    <section id="reviews" class="relative w-full py-24 bg-dark noise-overlay overflow-hidden">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">Testimonials</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+                    WHAT OUR <span class="text-gradient">CUSTOMERS</span> SAY
+                </h2>
+                <div class="flex items-center justify-center gap-2 mt-6">
+                    <div class="flex text-gold-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-steel-300 text-sm">5.0 out of 57 reviews</span>
+                </div>
+            </div>
+            
+            <!-- Swiper Reviews -->
+            <div class="swiper reviews-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <!-- Review 1 -->
+                    <div class="swiper-slide">
+                        <div class="glass rounded-2xl p-8 h-full">
+                            <div class="flex text-gold-500 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-steel-100 leading-relaxed mb-6">"Great parts and service and great people. Always friendly and have what I need in stock at a great price!"</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center text-dark font-bold">R</div>
+                                <div>
+                                    <div class="font-semibold text-white text-sm">Russ D.</div>
+                                    <div class="text-xs text-steel-400">Lexington, NC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="swiper-slide">
+                        <div class="glass rounded-2xl p-8 h-full">
+                            <div class="flex text-gold-500 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-steel-100 leading-relaxed mb-6">"If you blink you could miss it since it's tucked back off the road but don't let that have you thinkin that it's not worth the stop. Super friendly and knowledgeable!"</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center text-dark font-bold">J</div>
+                                <div>
+                                    <div class="font-semibold text-white text-sm">Jeff L.</div>
+                                    <div class="text-xs text-steel-400">Lexington, NC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="swiper-slide">
+                        <div class="glass rounded-2xl p-8 h-full">
+                            <div class="flex text-gold-500 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-steel-100 leading-relaxed mb-6">"Fast, honest, and clean. Lexco explained everything and had us comfortable by dinner. Would definitely recommend to anyone in the area."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-steel-500 rounded-full flex items-center justify-center text-white font-bold">J</div>
+                                <div>
+                                    <div class="font-semibold text-white text-sm">Jordan M.</div>
+                                    <div class="text-xs text-steel-400">Lexington, NC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 4 -->
+                    <div class="swiper-slide">
+                        <div class="glass rounded-2xl p-8 h-full">
+                            <div class="flex text-gold-500 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-steel-100 leading-relaxed mb-6">"Called them on a Saturday morning and they came out within the hour. Fixed our AC quickly and the price was fair. True professionals!"</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-steel-500 rounded-full flex items-center justify-center text-white font-bold">S</div>
+                                <div>
+                                    <div class="font-semibold text-white text-sm">Sarah K.</div>
+                                    <div class="text-xs text-steel-400">Welcome, NC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 5 -->
+                    <div class="swiper-slide">
+                        <div class="glass rounded-2xl p-8 h-full">
+                            <div class="flex text-gold-500 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-steel-100 leading-relaxed mb-6">"We've used Lexco for years. They installed our new furnace last winter and the whole process was smooth from start to finish. Highly recommend!"</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-steel-500 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                                <div>
+                                    <div class="font-semibold text-white text-sm">Mike T.</div>
+                                    <div class="text-xs text-steel-400">Lexington, NC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 8: GALLERY                         -->
+    <!-- ========================================== -->
+    <section id="gallery" class="relative w-full py-24 bg-dark noise-overlay overflow-hidden">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">Our Work</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+                    PROJECT <span class="text-gradient">GALLERY</span>
+                </h2>
+            </div>
+            
+            <!-- Masonry Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="group relative rounded-xl overflow-hidden aspect-square cursor-pointer" data-aos="fade-up" data-aos-delay="0" onclick="openLightbox(this)">
+                    <img src="images/tech-van.jpg" alt="HVAC Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gold-500/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-dark text-2xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer" data-aos="fade-up" data-aos-delay="50" onclick="openLightbox(this)">
+                    <img src="images/tech-outdoor.jpg" alt="AC Repair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gold-500/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-dark text-2xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden aspect-square cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox(this)">
+                    <img src="images/ac-install.jpg" alt="AC Installation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gold-500/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-dark text-2xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer" data-aos="fade-up" data-aos-delay="150" onclick="openLightbox(this)">
+                    <img src="images/heating-repair.jpg" alt="Heating Repair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gold-500/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-dark text-2xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox(this)">
+                    <img src="images/tech-panel.jpg" alt="Electrical Panel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gold-500/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-dark text-2xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden aspect-square cursor-pointer" data-aos="fade-up" data-aos-delay="250" onclick="openLightbox(this)">
+                    <img src="images/service-tuneup.jpg" alt="HVAC Maintenance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gold-500/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-dark text-2xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden aspect-square cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="openLightbox(this)">
+                    <img src="images/indoor-air.jpg" alt="Indoor Air Quality" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gold-500/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-dark text-2xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer" data-aos="fade-up" data-aos-delay="350" onclick="openLightbox(this)">
+                    <img src="images/tech-smile.jpg" alt="HVAC Technician" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gold-500/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-dark text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-8">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-gold-500 transition-colors">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Gallery Image" class="max-w-full max-h-[90vh] object-contain rounded-lg">
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SECTION 9: FAQ                             -->
+    <!-- ========================================== -->
+    <section id="faq" class="relative w-full py-24 bg-steel-500 noise-overlay overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-steel-600 via-steel-500 to-steel-600"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-16">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">FAQ</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+                    COMMON <span class="text-gradient">QUESTIONS</span>
+                </h2>
+            </div>
+            
+            <!-- FAQ Accordion -->
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                <!-- FAQ 1 -->
+                <div class="faq-item glass rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-white pr-4">How often should I have my HVAC system serviced?</span>
+                        <i class="fas fa-chevron-down text-gold-500 transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-steel-200 text-sm leading-relaxed">We recommend having your HVAC system professionally serviced twice a year—once in the spring before cooling season and once in the fall before heating season. Regular maintenance helps prevent breakdowns, improves efficiency, and extends the life of your system.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-item glass rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-white pr-4">What are signs my air conditioner needs repair?</span>
+                        <i class="fas fa-chevron-down text-gold-500 transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-steel-200 text-sm leading-relaxed">Common signs include: warm air blowing from vents, weak airflow, unusual noises (grinding, squealing), frequent cycling on and off, high humidity indoors, water leaks around the unit, and unexpectedly high energy bills. If you notice any of these, call Lexco for a diagnostic.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-item glass rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-white pr-4">Do you offer emergency HVAC services?</span>
+                        <i class="fas fa-chevron-down text-gold-500 transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-steel-200 text-sm leading-relaxed">Yes! Lexco Heating & Cooling provides 24/7 emergency HVAC services throughout Lexington and Davidson County. Our technicians are on-call with fully stocked trucks to handle any heating or cooling emergency. Call us anytime at <a href="tel:3363575776" class="text-gold-500">(336) 357-5776</a>.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="faq-item glass rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-white pr-4">How long does an HVAC system typically last?</span>
+                        <i class="fas fa-chevron-down text-gold-500 transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-steel-200 text-sm leading-relaxed">With proper maintenance, central air conditioners typically last 12-15 years, furnaces last 15-20 years, and heat pumps last about 10-15 years. Regular maintenance from Lexco can help maximize your system's lifespan and keep it running efficiently.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="faq-item glass rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-white pr-4">What areas do you service?</span>
+                        <i class="fas fa-chevron-down text-gold-500 transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-steel-200 text-sm leading-relaxed">We proudly serve Lexington, NC and the surrounding Davidson County communities including Welcome, Tyro, Reeds, Southmont, Midway, Churchland, and Denton. Contact us to confirm service in your area.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 6 -->
+                <div class="faq-item glass rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-white pr-4">Do you offer financing options?</span>
+                        <i class="fas fa-chevron-down text-gold-500 transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-steel-200 text-sm leading-relaxed">Yes, we offer flexible financing options for new system installations and major repairs. We accept all major credit cards including American Express, Visa, Mastercard, and Discover. Contact us to discuss financing options that work for your budget.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 10: OUR PROCESS                    -->
+    <!-- ========================================== -->
+    <section id="process" class="relative w-full py-24 bg-dark noise-overlay overflow-hidden">
+        <!-- Watermark -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+            <span class="text-[20vw] font-bold text-white/[0.02] whitespace-nowrap">PROCESS</span>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">How It Works</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+                    OUR <span class="text-gradient">PROCESS</span>
+                </h2>
+            </div>
+            
+            <!-- Process Steps -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="relative group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="glass rounded-2xl p-8 h-full hover-lift relative">
+                        <div class="text-6xl font-bold text-gold-500/20 mb-4">01</div>
+                        <div class="w-14 h-14 bg-gold-500 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-phone-alt text-dark text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Book</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">Call or schedule online. We confirm quickly and send updates so you know exactly when to expect us.</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gold-500/30"></div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="glass rounded-2xl p-8 h-full hover-lift relative">
+                        <div class="text-6xl font-bold text-gold-500/20 mb-4">02</div>
+                        <div class="w-14 h-14 bg-gold-500 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-search text-dark text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Diagnose</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">A licensed tech arrives on time, inspects your system thoroughly, and explains all options with transparent pricing.</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gold-500/30"></div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass rounded-2xl p-8 h-full hover-lift relative">
+                        <div class="text-6xl font-bold text-gold-500/20 mb-4">03</div>
+                        <div class="w-14 h-14 bg-gold-500 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-check-circle text-dark text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Solve</h3>
+                        <p class="text-steel-300 text-sm leading-relaxed">We fix it right with quality parts and a clean workspace—guaranteed. Your comfort is our priority.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="400">
+                <a href="#contact" class="inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-400 text-dark font-bold px-8 py-4 rounded-xl transition-all hover:scale-105">
+                    Get an Estimate
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 11: CTA / CONTACT                  -->
+    <!-- ========================================== -->
+    <section id="contact" class="relative w-full py-24 bg-dark noise-overlay overflow-hidden">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Left: Form -->
+                <div class="space-y-8">
+                    <div data-aos="fade-up">
+                        <span class="text-xs font-mono uppercase tracking-[0.2em] text-gold-500">Get In Touch</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+                            BOOK AN<br><span class="text-gradient">APPOINTMENT</span>
+                        </h2>
+                        <p class="text-steel-300 mt-6">Tell us what's going on. We'll reply fast with options and pricing.</p>
+                    </div>
+                    
+                    <form id="contact-form" class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Your Name" required class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-steel-400 focus:border-gold-500 focus:outline-none transition-colors">
+                            <input type="tel" placeholder="Phone Number" required class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-steel-400 focus:border-gold-500 focus:outline-none transition-colors">
+                        </div>
+                        <input type="email" placeholder="Email Address" required class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-steel-400 focus:border-gold-500 focus:outline-none transition-colors">
+                        <select required class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-steel-400 focus:border-gold-500 focus:outline-none transition-colors appearance-none cursor-pointer">
+                            <option value="" disabled selected>Select Service</option>
+                            <option value="heating-repair">Heating Repair</option>
+                            <option value="heating-install">Heating Installation</option>
+                            <option value="ac-repair">AC Repair</option>
+                            <option value="ac-install">AC Installation</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="emergency">Emergency Service</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea placeholder="Describe your issue..." rows="4" class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-steel-400 focus:border-gold-500 focus:outline-none transition-colors resize-none"></textarea>
+                        <button type="submit" class="w-full bg-gold-500 hover:bg-gold-400 text-dark font-bold py-4 rounded-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3">
+                            Request a Call
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Right: Info -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <!-- Image -->
+                    <div class="relative rounded-2xl overflow-hidden">
+                        <img src="images/contact-dispatch.jpg" alt="Lexco Customer Service" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+                    </div>
+                    
+                    <!-- Contact Cards -->
+                    <div class="space-y-4">
+                        <div class="glass rounded-xl p-5 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt text-dark"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-mono uppercase tracking-wider text-steel-400">Call Us</div>
+                                <a href="tel:3363575776" class="text-lg font-semibold text-white hover:text-gold-500 transition-colors">(336) 357-5776</a>
+                            </div>
+                        </div>
+                        
+                        <div class="glass rounded-xl p-5 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-mono uppercase tracking-wider text-steel-400">Visit Us</div>
+                                <p class="text-white">5765 NC Highway 8<br>Lexington, NC 27292</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glass rounded-xl p-5 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-dark"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-mono uppercase tracking-wider text-steel-400">Hours</div>
+                                <p class="text-white">Mon–Fri: 8:00 AM – 4:00 PM<br><span class="text-gold-500">24/7 Emergency Service</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="relative w-full bg-dark border-t border-white/5 pt-16 pb-8 noise-overlay">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Logo & About -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-snowflake text-dark text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold text-white">LEXCO</div>
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-steel-400">Heating & Cooling</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-steel-400 leading-relaxed">Trusted HVAC contractor serving Lexington, NC and surrounding areas since 1976.</p>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-gold-500 rounded-lg flex items-center justify-center text-steel-400 hover:text-dark transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-gold-500 rounded-lg flex items-center justify-center text-steel-400 hover:text-dark transition-all">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-gold-500 rounded-lg flex items-center justify-center text-steel-400 hover:text-dark transition-all">
+                            <i class="fab fa-yelp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">Heating Repair</a></li>
+                        <li><a href="#services" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">AC Repair</a></li>
+                        <li><a href="#services" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">Installation</a></li>
+                        <li><a href="#services" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">Maintenance</a></li>
+                        <li><a href="#services" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">Emergency Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">About Us</a></li>
+                        <li><a href="#reviews" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">Reviews</a></li>
+                        <li><a href="#process" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">Our Process</a></li>
+                        <li><a href="#faq" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-sm text-steel-400 hover:text-gold-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sm text-steel-400">
+                            <i class="fas fa-phone text-gold-500 text-xs"></i>
+                            <a href="tel:3363575776" class="hover:text-gold-500 transition-colors">(336) 357-5776</a>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-steel-400">
+                            <i class="fas fa-map-marker-alt text-gold-500 text-xs mt-1"></i>
+                            <span>5765 NC Highway 8<br>Lexington, NC 27292</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-steel-400">
+                            <i class="fas fa-clock text-gold-500 text-xs"></i>
+                            <span>Mon–Fri: 8AM–4PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-steel-500">© 2025 Lexco Heating & Cooling. All rights reserved. Licensed & Insured.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-xs text-steel-500 hover:text-steel-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-xs text-steel-500 hover:text-steel-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- FLOATING CALL BUTTON                       -->
+    <!-- ========================================== -->
+    <a href="tel:3363575776" id="floating-call" class="fixed bottom-6 right-6 z-50 bg-gold-500 hover:bg-gold-400 text-dark w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all lg:hidden">
+        <i class="fas fa-phone text-xl"></i>
+    </a>
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT                                 -->
+    <!-- ========================================== -->
+    <script>
+        // ==========================================
+        // AOS Initialization
+        // ==========================================
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // ==========================================
+        // GSAP Animations
+        // ==========================================
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Parallax
+        gsap.to('#hero-image', {
+            yPercent: 30,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        ScrollTrigger.create({
+            start: 'top -100',
+            onUpdate: (self) => {
+                if (self.direction === 1 && self.scroll() > 100) {
+                    navbar.classList.add('glass-dark');
+                } else if (self.scroll() < 100) {
+                    navbar.classList.remove('glass-dark');
+                }
+            }
+        });
+
+        // Stats Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            ScrollTrigger.create({
+                trigger: counter,
+                start: 'top 80%',
+                once: true,
+                onEnter: () => {
+                    gsap.to(counter, {
+                        innerHTML: target,
+                        duration: 2,
+                        snap: { innerHTML: 1 },
+                        ease: 'power2.out'
+                    });
+                }
+            });
+        });
+
+        // ==========================================
+        // Mobile Menu
+        // ==========================================
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // ==========================================
+        // Swiper Reviews
+        // ==========================================
+        const reviewsSwiper = new Swiper('.reviews-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 3
+                }
+            }
+        });
+
+        // ==========================================
+        // Lightbox
+        // ==========================================
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // ==========================================
+        // FAQ Accordion
+        // ==========================================
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+            const isOpen = !content.classList.contains('hidden');
+            
+            // Close all
+            document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+            document.querySelectorAll('.faq-btn .fa-chevron-down').forEach(i => i.style.transform = 'rotate(0deg)');
+            
+            // Toggle current
+            if (!isOpen) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // ==========================================
+        // Contact Form
+        // ==========================================
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            btn.classList.add('bg-green-500');
+            btn.classList.remove('bg-gold-500', 'hover:bg-gold-400');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-green-500');
+                btn.classList.add('bg-gold-500', 'hover:bg-gold-400');
+                this.reset();
+            }, 3000);
+        });
+
+        // ==========================================
+        // Smooth Scroll
+        // ==========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ==========================================
+        // Floating Call Button (show/hide)
+        // ==========================================
+        const floatingCall = document.getElementById('floating-call');
+        ScrollTrigger.create({
+            start: 'top -500',
+            onUpdate: (self) => {
+                if (self.scroll() > 500) {
+                    floatingCall.classList.remove('hidden');
+                    floatingCall.classList.add('flex');
+                } else {
+                    floatingCall.classList.add('hidden');
+                    floatingCall.classList.remove('flex');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
